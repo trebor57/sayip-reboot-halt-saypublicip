@@ -1,0 +1,27 @@
+Source: sayip-node-utils
+Section: hamradio
+Priority: optional
+Maintainer: Jory A. Pratt, W5GLE <geekypenguin@gmail.com>
+Build-Depends: debhelper-compat (= 13), ruby
+Standards-Version: 4.6.2
+Homepage: https://github.com/hardenedpenguin/sayip-reboot-halt-saypublicip
+Rules-Requires-Root: no
+
+Package: sayip-node-utils
+Architecture: all
+Depends: ${misc:Depends},
+         ruby (>= 2.1),
+         asl3-asterisk,
+         debconf (>= 0.5) | debconf-2.0
+Description: SayIP and node control utilities for AllStarLink
+ A set of utilities for AllStarLink nodes to:
+  - Announce local IP addresses via DTMF commands
+  - Announce public IP address via DTMF commands
+  - Control node shutdown (halt) via DTMF commands
+  - Control node reboot via DTMF commands
+ .
+ This package includes:
+  - sayip-node-utils.rb: Unified Ruby script for all functionality
+  - Audio files for IP announcements and system control
+  - Example configuration for ASL3 custom/rpt integration
+

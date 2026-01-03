@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Prerm script - run before package removal
+# This script should not fail even if debconf is unavailable
+
+exit 0
+

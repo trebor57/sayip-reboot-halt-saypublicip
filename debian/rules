@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_build:
+
+override_dh_usrlocal:
+	# Skip dh_usrlocal check - we intentionally install to /usr/local/share/asterisk/sounds
+
+override_dh_auto_install:
+	# Install Ruby script
+	install -d $(CURDIR)/debian/sayip-node-utils/usr/sbin
+	install -m 755 sayip-node-utils.rb $(CURDIR)/debian/sayip-node-utils/usr/sbin/sayip-node-utils
+	# Install audio files
+	install -d $(CURDIR)/debian/sayip-node-utils/usr/local/share/asterisk/sounds
+	install -m 644 sounds/*.ulaw $(CURDIR)/debian/sayip-node-utils/usr/local/share/asterisk/sounds/
+	# Install example configuration
+	install -d $(CURDIR)/debian/sayip-node-utils/usr/share/doc/sayip-node-utils
+	install -m 644 sayip.conf.example $(CURDIR)/debian/sayip-node-utils/usr/share/doc/sayip-node-utils/
+	# Install systemd service example
+	install -d $(CURDIR)/debian/sayip-node-utils/usr/share/doc/sayip-node-utils/examples
+	install -m 644 debian/allstar-sayip.service $(CURDIR)/debian/sayip-node-utils/usr/share/doc/sayip-node-utils/examples/
+

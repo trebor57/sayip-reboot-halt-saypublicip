@@ -1,0 +1,8 @@
+#!/bin/sh
+
+. /usr/share/debconf/confmodule
+
+# Ask for node number
+db_input medium sayip-node-utils/node-number || true
+db_go || true
+

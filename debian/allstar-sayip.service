@@ -1,0 +1,15 @@
+[Unit]
+Description=AllStar SayIP Service - Announce Local IP on Boot
+After=asterisk.service
+Requires=asterisk.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/sayip-node-utils local NODE_NUMBER_PLACEHOLDER
+RemainAfterExit=yes
+User=asterisk
+Group=asterisk
+
+[Install]
+WantedBy=multi-user.target
+

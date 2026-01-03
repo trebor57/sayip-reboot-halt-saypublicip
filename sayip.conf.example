@@ -1,0 +1,13 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; SayIP Customization ;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;MENU:sayip:functions:Say local/public IP and reboot/halt via DTMF
+;
+; [functions] overrides for SayIP tools (Ruby version)
+;
+[functions-sayip](!)
+A1 = cmd,/usr/sbin/sayip-node-utils l $NODE
+A3 = cmd,/usr/sbin/sayip-node-utils p $NODE
+B1 = cmd,/usr/sbin/sayip-node-utils h $NODE
+B3 = cmd,/usr/sbin/sayip-node-utils r $NODE
+
