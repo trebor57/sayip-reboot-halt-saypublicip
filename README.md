@@ -1,5 +1,3 @@
-![SayIP Logo](https://github.com/KD5FMU/SayIP-for-ASL3/blob/main/sayip.jpg)
-
 # SayIP for ASL3
 
 This is a Debian package for AllStarLink V3 nodes that speaks the node's IP address at boot. It can announce the **local** or **public** IP address and includes features to **halt** or **reboot** the node using DTMF commands.
