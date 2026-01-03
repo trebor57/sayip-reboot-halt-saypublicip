@@ -11,10 +11,7 @@ This is a Debian package for AllStarLink V3 nodes that speaks the node's IP addr
 Download and install the package with your node number:
 
 ```bash
-# Download the .deb package
-wget https://github.com/hardenedpenguin/sayip-reboot-halt-saypublicip/releases/latest/download/sayip-node-utils_1.0.0-1_all.deb
-
-# Install with node number (replace 12345 with your node number)
+wget https://github.com/hardenedpenguin/sayip-reboot-halt-saypublicip/releases/download/v1.0.0/sayip-node-utils_1.0.0-1_all.deb
 sudo NODE_NUMBER=12345 dpkg -i sayip-node-utils_1.0.0-1_all.deb
 ```
 
@@ -128,16 +125,9 @@ sudo rm /etc/asterisk/custom/rpt/sayip.conf
 You can also run the script manually from the command line:
 
 ```bash
-# Say local IP address
 sudo /usr/sbin/sayip-node-utils local NODE_NUMBER
-
-# Say public IP address
 sudo /usr/sbin/sayip-node-utils public NODE_NUMBER
-
-# Halt the system (with audio announcement)
 sudo /usr/sbin/sayip-node-utils halt NODE_NUMBER
-
-# Reboot the system (with audio announcement)
 sudo /usr/sbin/sayip-node-utils reboot NODE_NUMBER
 ```
 
